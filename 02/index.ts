@@ -28,7 +28,7 @@ const countAndCheckByMany = (from: number, to: number) => {
       const checkedString = numToTraverseString.substring(0, j);
       const restOfString = numToTraverseString.replaceAll(`${checkedString}`, '');
 
-      if (restOfString.length === 0 && checkedString !== '0') {
+      if (restOfString.length === 0 && checkedString[0] !== '0') {
         arrayOfDigitsSecondStage.push(i.toString());
         j = 0;
       }
