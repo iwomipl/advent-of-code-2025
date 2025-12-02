@@ -1,22 +1,14 @@
-import * as fs from 'fs';
+import {readInputFile} from "../utils/readFile";
+
 type TraverseType = { endPosition: number, passingOver: number };
 const startPosition = 50;
 
-function readInputFile(): string[] {
-  try {
-    const fileContent = fs.readFileSync('01/input.txt', 'utf-8');
-    return fileContent.split('\n');
-  } catch (error) {
-    console.error('Error reading file:', error);
-    return [];
-  }
-}
 
 
-const arrayOfValues = readInputFile();
+const arrayOfValues = readInputFile('01/input.txt').split('\r\n');
 
 const traverseTroughArray = (steps: string, start: number) => {
-  const stepsArray = steps.replace('\r', '').split("")
+  const stepsArray = steps.split("")
   const sign = stepsArray.filter(step => step.includes('R') || step.includes('L')).join('');
   const stepsNumber = +stepsArray.filter(step => !step.includes('R') && !step.includes('L')).join('');
 

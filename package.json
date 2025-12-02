@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "ts-node --transpile-only index.ts",
     "01": "ts-node --transpile-only 01/index.ts",
+    "02": "ts-node --transpile-only 02/index.ts",
     "build": "tsc",
     "start": "node dist/index.js"
   },
